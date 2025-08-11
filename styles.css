@@ -8,16 +8,16 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; 
 }
-/* Prevent background scroll when menu is open */
+
 .no-scroll { overflow: hidden; }
 
-/* Base navbar container (already have; ensure room for button) */
+
 .navbar__container {
   display:flex; align-items:center; justify-content:space-between;
   height: 80px; width:100%; max-width:1300px; padding: 0 16px; margin:0 auto;
 }
 
-/* Hamburger button basics */
+
 .navbar__toggle {
   display:none; background:none; border:0; padding:8px; cursor:pointer;
 }
@@ -32,12 +32,12 @@ html {
 /* Desktop menu */
 .navbar__menu { display:flex; align-items:center; list-style:none; gap:0; }
 
-/* Mobile: stack + slide-down */
+/* Mobile */
 @media (max-width: 960px){
   .navbar__toggle{ display:block; }
 
   .navbar__menu{
-    position:absolute; left:0; top:-1000px; /* hidden */
+    position:absolute; left:0; top:-1000px;
     width:100%; height:auto; max-height:70vh; overflow:auto;
     display:grid; grid-template-columns:1fr;
     background:#BAA898; z-index:999;
@@ -45,22 +45,20 @@ html {
     box-shadow: 0 6px 20px rgba(0,0,0,.15);
   }
   .navbar__menu.active{
-    top:100%; opacity:1; /* slides down below navbar */
+    top:100%; opacity:1;
   }
   .navbar__item{ width:100%; }
   .navbar__links{ display:block; padding:1.25rem; width:100%; }
   .navbar__btn{ padding:1rem; }
 }
 
-/* Logo image sizing (consistent) */
+
 #navbar__logo > img#main__img{
   display:block; height:40px; width:auto; object-fit:contain;
 }
-/* @media (max-width: 960px){
-  #navbar__logo > img#main__img{ height:32px; }
-} */
 
-/* Make sure content isn’t causing mobile issues */
+
+
 @media (max-width:768px){
   .main__container{
     grid-template-columns:1fr; height:auto; padding: 0 20px;
@@ -68,38 +66,38 @@ html {
   #main__img{ width:100%; height:auto; max-width:520px; margin:1rem auto 0; }
 }
 
-/* Side dock shouldn’t cover the menu on phones */
+
 @media (max-width: 960px){
-  .side-dock{ z-index: 98; } /* below the menu (z 999) */
+  .side-dock{ z-index: 98; }
 }
 @media (max-width: 960px){
   .main__container{
     grid-template-columns: 1fr;
-    height: auto !important;        /* kill 90vh/220vh */
+    height: auto !important;        
     padding: 0 20px;
   }
   #main__img{
     width: 100% !important;
     height: auto !important;
     max-width: 520px;
-    margin: 1rem auto 0;            /* spacing below hero */
+    margin: 1rem auto 0;            
   }
-  .main{ padding-bottom: 2rem; }  /* ensure gap before About */
+  .main{ padding-bottom: 2rem; } 
 }
 
 
 /* --- Side Dock --- */
 :root{
-  --dock-accent:#fff;   /* your blue */
-  --dock-bg:#839788;          /* icon pill bg */
-  --dock-text:#fff;        /* label text */
+  --dock-accent:#fff;  
+  --dock-bg:#839788;         
+  --dock-text:#fff;    
 }
 
 .side-dock{
   position:fixed;
   align-items: flex-end;
   top:50%;
-  right:0;                 /* stick to right edge */
+  right:0;               
   transform:translateY(-50%);
   display:flex;
   flex-direction:column;
@@ -162,7 +160,7 @@ html {
 }
 
 /* Item-specific accent states if you want them */
-.dock-linkedin:hover svg{ fill:#0A66C2; }      /* LinkedIn blue on hover */
+.dock-linkedin:hover svg{ fill:#0A66C2; }     
 .dock-email:hover svg{ fill:var(--dock-accent); }
 .dock-resume:hover svg{ fill:var(--dock-accent); }
 
@@ -177,7 +175,7 @@ html {
   .dock-item{ height:40px; --width-expanded: 150px; }
 }
 .navbar {
-  background: #BAA898;            /* default */
+  background: #BAA898;          
   height: 80px;
   display: flex;
   justify-content: center;
@@ -191,15 +189,15 @@ html {
 
 .navbar a { color: #fff; transition: color .25s ease; }
 
-.navbar.on-about { background-color: #CEC1B6; }      /* blue bg */
+.navbar.on-about { background-color: #CEC1B6; }    
 
 #navbar__logo > img#main__img {
   display: block;
-  height: 20px !important;     /* set the exact size you want */
-  width: auto !important;       /* keep aspect ratio */
+  height: 20px !important;    
+  width: auto !important;       
   max-height: none !important;
   max-width: none !important;
-  transform: none !important;   /* in case something scaled it */
+  transform: none !important;  
   object-fit: contain !important;
 }
 
@@ -207,11 +205,11 @@ html {
   #navbar__logo > img#main__img { height: 90px !important; }
 }
 
-/* Give the navbar room so the image can be that tall */
+
 .navbar__container {
   display: flex;
   align-items: center;
-  height: 90px;                 /* or larger if you want */
+  height: 90px;                
 }
 
 .fa-gem{
@@ -453,7 +451,7 @@ html {
     height:auto;
     width: 65%;
 }
-/* mobile resonse */
+
 @media screen and (max-width:768px){
     .main__container {
         display:grid;
@@ -463,7 +461,7 @@ html {
         margin: 0 auto;
         width: 100%;
         padding: 0 20px;
-        /* height:  */
+      
     }
     .main__content {
         text-align: center;
@@ -505,8 +503,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto; /* let it grow with content */
-    /* min-height: 90vh; */
+    height: auto;
 }
 
 .services h1 {
@@ -522,13 +519,13 @@ html {
     text-align: center;
 }
 
-/* This is the key change */
+
 .services__container {
     display: flex;
     flex-direction: row; /* image left, text right */
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px; /* space between image & text */
+    gap: 20px; 
     max-width: 1200px;
     padding: 0 16px;
     box-sizing: border-box;
@@ -543,14 +540,14 @@ html {
     flex-shrink: 0;
     border-radius: 8px;
 }
-/* caption below */
+
 .about-cap {
   margin-top: .5rem;
   font-size: .85rem;
   line-height: 1.4;
-  color: #141414;         /* or #333 on light bg */
-  text-align: center;     /* change to left if you want */
-  font-style: normal;     /* remove default italic */
+  color: #141414;        
+  text-align: center;   
+  font-style: normal;
   opacity: .9;
 }
 
@@ -574,10 +571,10 @@ html {
     color: #fff;
 }
 
-/* Mobile layout stacks vertically */
+
 @media screen and (max-width: 960px) {
     .services__container {
-        flex-direction: column; /* stack on small screens */
+        flex-direction: column;
         align-items: center;
     }
     #about__img {
@@ -594,7 +591,7 @@ html {
         font-size: 1.2rem;
     }
 }
-/* ===== Experience container ===== */
+
 .experience {
   background-color: #fff;
   display: flex;
@@ -610,10 +607,10 @@ html {
   margin: 0 0 1.5rem;
 }
 
-/* ===== QuantumCyte grid ===== */
+
 .exp-grid, .ventura-grid{
   display: grid;
-  grid-template-columns: 320px 1fr; /* images left, text right */
+  grid-template-columns: 320px 1fr;
   gap: 3rem;
   align-items: start;
   width: 100%;
@@ -623,7 +620,7 @@ html {
 }
 .pheast-grid {
   display: grid;
-  grid-template-columns: 320px 1fr; /* images left, text right */
+  grid-template-columns: 320px 1fr;
   gap: 3rem;
   align-items: start;
   width: 100%;
@@ -635,7 +632,7 @@ html {
 .ventura-grid, .pheast-grid {
   border-top: 1px solid #e5e7eb;
   display: grid;
-  grid-template-columns: 320px 1fr; /* images left, text right */
+  grid-template-columns: 320px 1fr;
   gap: 3rem;
   align-items: start;
   width: 100%;
@@ -644,11 +641,10 @@ html {
   margin-bottom: 2rem;
 }
 
-/* ===== BIRG grid (flipped) ===== */
 .BIRG-grid, .jazz-grid {
   border-top: 1px solid #e5e7eb;
   display: grid;
-  grid-template-columns: 1fr 320px; /* text left, images right */
+  grid-template-columns: 1fr 320px;
   gap: 3rem;
   align-items: start;
   width: 100%;
@@ -657,10 +653,9 @@ html {
   margin-top: 2rem;
 }
 
-.BIRG-right, .jazz-right { order: 1; } /* text first */
-.BIRG-left, .jazz-left { order: 2; }  /* images second */
+.BIRG-right, .jazz-right { order: 1; } 
+.BIRG-left, .jazz-left { order: 2; } 
 
-/* ===== Left column (images + captions) ===== */
 .exp-left {
   display: flex;
   flex-direction: column;
@@ -683,21 +678,21 @@ html {
 .BIRG-img, .ventura-img, .pheast-img {
   display: block;
   width: 100%;
-  height: auto;      /* preserve aspect ratio */
+  height: auto;      
   object-fit: contain;
 }
 .jazz-img {
     margin-top: -1rem;
     display: block;
     width: 100%;
-    height: auto;      /* preserve aspect ratio */
+    height: auto;     
     object-fit: contain;
 }
 .pheast-img {
     margin-top: -4.5rem;
     display: block;
     width: 100%;
-    height: auto;      /* preserve aspect ratio */
+    height: auto;     
     object-fit: contain;
 }
 
@@ -711,7 +706,6 @@ html {
   opacity: 0.8;
 }
 
-/* ===== Right column (text) ===== */
 .exp-right h2, .ventura-right h2, .jazz-right h2, .pheast-right h2{
   margin: 0 0 0.25rem;
   padding: 3.7rem 0 0 0.25rem;
@@ -752,12 +746,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;      /* remove underline */
-    color: #fff;                /* normal text color */
+    text-decoration: none;      
+    color: #fff;              
     padding: 10px 20px;
-    margin: 1.2rem auto;         /* center horizontally in grid */
-    height: auto;                /* auto height */
-    width: fit-content;          /* shrink to fit text */
+    margin: 1.2rem auto;         
+    height: auto;               
+    width: fit-content;        
     border: none;
     outline: none;
     border-radius: 4px;
@@ -779,8 +773,8 @@ html {
     outline: none;
     border-radius: 1px;
     background: #B2CBE6;
-    color: #fff !important;       /* force white text */
-    text-decoration: none !important; /* force no underline */
+    color: #fff !important;      
+    text-decoration: none !important;
     font-weight: 500;
     cursor: pointer;
 }
@@ -793,7 +787,6 @@ html {
 
 
 
-/* ===== Responsive ===== */
 @media (max-width: 1100px) {
   .experience { padding: 2rem 4rem 4rem; }
 }
@@ -801,22 +794,20 @@ html {
 @media (max-width: 900px) {
   .exp-grid,
   .BIRG-grid {
-    grid-template-columns: 1fr; /* stack */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .exp-left, .BIRG-left { order: 2; }  /* images second */
-  .exp-right, .BIRG-right { order: 1; } /* text first */
+  .exp-left, .BIRG-left { order: 2; }  
+  .exp-right, .BIRG-right { order: 1; } 
   .experience h1 { font-size: 2.4rem; }
   .experience { padding: 2rem 1.25rem 3rem; }
 }
 
-/* Tight phones */
 @media (max-width: 480px) {
   .exp-right ul, .BIRG-right ul { padding-left: 1.25rem; }
 }
 
 
-/* Footer layout */
 .footer {
     margin:0rem;
     background: #DEE3E0
@@ -839,7 +830,6 @@ html {
   font-size: 2rem;
 }
 
-/* Links */
 .footer-left {
   text-decoration: none;
   color: inherit;
@@ -850,7 +840,6 @@ html {
   color:#67796E;
 }
 
-/* Button */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -867,9 +856,8 @@ html {
   outline: none;
 }
 
-/* LinkedIn button style */
 .btn--linkedin {
-  background: #0a66c2; /* LinkedIn brand */
+  background: #0a66c2; 
   color: #fff;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 10px rgba(10, 102, 194, 0.15);
 }
@@ -880,15 +868,14 @@ html {
   transform: translateY(0);
 }
 
-/* Responsive: email + button closer together on desktop */
 @media (min-width: 640px) {
   .footer__container {
-    grid-template-columns: auto auto; /* shrink-wrap to content */
-    justify-content: center; /* center both in the middle */
+    grid-template-columns: auto auto; 
+    justify-content: center; 
     grid-template-areas:
       "title title"
       "left right";
-    gap: 1.2rem; /* control spacing between email and LinkedIn */
+    gap: 1.2rem;
   }
 
   .footer__container h1 {
@@ -908,30 +895,27 @@ html {
 }
 
 .main__container{
-  min-height: 90vh;     /* was height: 90vh; */
-  height: auto;         /* allow growth if content is taller */
-  gap: 2rem;            /* space between text and image */
-  padding-block: 2rem;  /* top/bottom breathing room */
+  min-height: 90vh;     
+  height: auto;         
+  gap: 2rem;            
+  padding-block: 2rem;  
 }
-.main{ padding-bottom: 2rem; }  /* ensure space before About */
+.main{ padding-bottom: 2rem; }  
 
-/* Make the hero image behave */
+
 #main__img{
   width: min(65%, 560px);
   height: auto;
   display: block;
-  margin: 0 auto;       /* center on narrow screens */
+  margin: 0 auto;     
 }
 
-/* About section: avoid crowding the hero */
 .services{ padding-top: 2rem; }
-#about__img{ margin-top: 0; }    /* remove the 6rem bump that pushes layout around */
-
-/* On phones/tablets stack and keep everything fluid */
+#about__img{ margin-top: 0; }  
 @media (max-width: 960px){
   .main__container{
     grid-template-columns: 1fr;
-    min-height: auto;   /* don't force viewport height on mobile */
+    min-height: auto;  
   }
   #main__img{
     width: 100%;
@@ -939,9 +923,8 @@ html {
     margin: 1rem auto 0;
   }}
   @media (max-width: 900px){
-  /* 1) Make every grid single-column */
   .exp-grid,
-  .ventura-grid,      /* Deep learning / SURP */
+  .ventura-grid,   
   .pheast-grid,
   .BIRG-grid,
   .jazz-grid{
@@ -951,49 +934,44 @@ html {
     margin-bottom: 2rem !important;
   }
 
-  /* 2) Order: text first, images second */
   .exp-right, .ventura-right, .pheast-right, .BIRG-right, .jazz-right { order: 1 !important; }
   .exp-left,  .ventura-left,  .pheast-left,  .BIRG-left,  .jazz-left  { order: 2 !important; }
 
-  /* 3) Remove desktop paddings/margins that cause crowding */
   .exp-right h2, .ventura-right h2, .jazz-right h2, .pheast-right h2, .BIRG-right h2{
     padding-top: 0 !important;
   }
   .pheast-img, .jazz-img{ margin-top: 0 !important; }
 
-  /* 4) Safety: images scale nicely */
   .exp-img, .ventura-img, .BIRG-img{
     width: 60% !important;
     height: auto !important;
     object-fit: contain;
     justify-self:center;
   }
-    /* 4) Safety: images scale nicely */
+ 
   .pheast-img, .jazz-img{
     margin-top:-2rem;
     width: 50% !important;
     height: 50 !important;
-    /* object-fit: ; */
+
     justify-self:center;
   }
 }
 
-/* === MOBILE MENU: show all 4 items without scrolling === */
-:root { --nav-h: 72px; }                 /* mobile navbar height */
+:root { --nav-h: 72px; }                 
 
 @media (max-width: 960px){
   .navbar, .navbar__container { height: var(--nav-h) !important; }
-  .navbar__container { position: relative; }  /* anchor the dropdown */
+  .navbar__container { position: relative; }  
 
-  /* Reset any old off-screen/50vh rules */
   .navbar__menu{
     position: absolute !important;
-    top: 100% !important;                 /* sits directly under navbar */
+    top: 100% !important;                
     left: 0; right: 0;
     display: grid !important;
     grid-template-columns: 1fr;
     background: #BAA898;
-    padding: 4px 0;                       /* tighter */
+    padding: 4px 0;                     
     margin: 0;
     opacity: 0;
     transform: translateY(-6px);
@@ -1009,7 +987,6 @@ html {
     pointer-events: auto;
   }
 
-  /* Equal, compact items so all 4 fit without scrolling */
   .navbar__item{ height: auto !important; }
 
   .navbar__links,
@@ -1017,8 +994,8 @@ html {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    padding: 10px 14px !important;        /* smaller padding */
-    min-height: 44px;                      /* accessible tap target */
+    padding: 10px 14px !important;     
+    min-height: 44px;                    
     width: 100% !important;
     margin: 0 !important;
     text-align: center;
@@ -1026,18 +1003,17 @@ html {
     line-height: 1.2;
   }
 
-  /* Contact Info = same height, just blue */
   .navbar__btn { padding: 0 !important; }
   .navbar__btn .button{
     display: flex !important;
     align-items: center;
     justify-content: center;
-    padding: 10px 14px !important;  /* match links */
-    min-height: 44px !important;    /* match links */
-    width: calc(40% - 16px) !important;  /* small side gutters */
+    padding: 10px 14px !important;
+    min-height: 44px !important;   
+    width: calc(40% - 16px) !important; 
     margin: 6px auto !important;
 
-    background: #B2CBE6 !important; /* blue */
+    background: #B2CBE6 !important; 
     color: #fff !important;
     border: 0 !important;
     border-radius: 6px !important;
@@ -1051,29 +1027,51 @@ html {
 }
 
 
-  /* Keep side dock below dropdown */
   .side-dock{ z-index: 98; }
 
 
-/* Optional: no need to block page scroll now, but safe to keep */
 .no-scroll { overflow: hidden; }
 
-/* Center all experience photos on mobile (iPhones etc.) */
-@media (max-width: 900px) {
-  .exp-left,
-  .ventura-left,
-  .pheast-left,
-  .BIRG-left,
-  .jazz-left {
-    align-items: center !important; /* center flex children horizontally */
+@media (max-width: 900px){
+  .exp-grid,
+  .ventura-grid,
+  .pheast-grid,
+  .BIRG-grid,
+  .jazz-grid{
+    grid-template-columns: 1fr !important;
+    align-items: center !important; 
+    justify-items: center !important; 
   }
 
-  .exp-img,
-  .ventura-img,
-  .pheast-img,
-  .BIRG-img,
-  .jazz-img {
+  .exp-left, .ventura-left, .pheast-left, .BIRG-left, .jazz-left{
+    align-items: center !important;
+    width: 100%;
+  }
+
+  .exp-left figure,
+  .ventura-left figure,
+  .pheast-left figure,
+  .BIRG-left figure,
+  .jazz-left figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .exp-img, .ventura-img, .pheast-img, .BIRG-img, .jazz-img{
     display: block;
+    margin: 0 auto;       
+    width: 100%;
+    max-width: 520px;     
+    height: auto;
+    object-fit: contain;
+  }
+
+
+  .exp-cap, .ventura-cap, .pheast-cap, .BIRG-cap, .jazz-cap{
+    text-align: center !important;
     margin-left: auto;
     margin-right: auto;
   }
