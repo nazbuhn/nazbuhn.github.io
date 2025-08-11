@@ -1032,7 +1032,7 @@ html {
 
 .no-scroll { overflow: hidden; }
 
-@media (max-width: 900px){
+/* @media (max-width: 900px){
   .exp-grid,
   .ventura-grid,
   .pheast-grid,
@@ -1074,5 +1074,36 @@ html {
     text-align: center !important;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+ */
+@media (max-width: 900px){
+  /* center the figure blocks */
+  .exp-left .exp-figure,
+  .ventura-left .ventura-figure,
+  .pheast-left .pheast-figure,
+  .BIRG-left .BIRG-figure,
+  .jazz-left .jazz-figure{
+    width: 100%;
+    max-width: 520px;              /* nice readable width */
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  /* center the actual images and keep them a bit narrower than the screen */
+  .exp-img, .ventura-img, .pheast-img, .BIRG-img, .jazz-img{
+    display: block;
+    margin-inline: auto !important;
+    max-width: 88vw;               /* not full-bleed = looks centered */
+    width: auto;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  /* captions centered */
+  .exp-cap, .ventura-cap, .pheast-cap, .BIRG-cap, .jazz-cap{
+    text-align: center !important;
+    margin-left: auto; margin-right: auto;
+    max-width: 40ch;               /* optional: nicer line length */
   }
 }
