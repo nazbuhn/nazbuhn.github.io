@@ -1108,3 +1108,22 @@ html {
     max-width: 40ch;              
   }
 }
+.services__container{
+  align-items: center !important;      /* was flex-start */
+}
+.about-figure{
+  display: flex;                       /* ensure the image/caption center within the figure */
+  flex-direction: column;
+  justify-content: center;
+}
+#about__img{
+  margin-top: 0 !important;            /* cancel earlier 6rem */
+  display: block;
+}
+
+/* === ABOUT H1: keep size strong on phones/tablets === */
+.services h1{
+  font-size: clamp(2.6rem, 4.2vw + 1.6rem, 3.5rem) !important;
+  line-height: 1.1;
+  text-wrap: balance;
+}
