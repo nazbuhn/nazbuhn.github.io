@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nasreen Buhn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Side Dock -->
+  <nav class="side-dock" aria-label="Quick contacts">
+    <a class="dock-item dock-linkedin" href="https://www.linkedin.com/in/nasreenbuhn/" target="_blank" rel="noopener" aria-label="Open LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.06C12.54 8.9 13.9 8 16 8c3.2 0 5 2.1 5 6.1V24h-4v-8.1c0-1.9-.7-3.2-2.3-3.2-1.26 0-2 .85-2.33 1.67-.12.3-.15.72-.15 1.14V24h-4V8z"/></svg>
+      <span class="dock-label">LinkedIn</span>
+    </a>
+    <a class="dock-item dock-email" href="mailto:nazbuhn@gmail.com" aria-label="Send me an email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+      <span class="dock-label">Email</span>
+    </a>
+    <a class="dock-item dock-resume" href="files/cv.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7V3.5L19.5 9H15ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>
+      <span class="dock-label">Resume</span>
+    </a>
+  </nav>
+
+  <!-- Top navigation -->
+  <nav class="navbar">
+    <div class="navbar__container">
+        <svg class="nb-logo" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg" role="img">
+            <title>NB logo</title>
+
+            <!-- monitor -->
+            <rect x="8" y="8" width="110" height="80" rx="10"
+                fill="#B2CBE6" stroke="#fff" stroke-width="7"/>
+
+            <!-- NB letters -->
+            <text x="65" y="65"
+                text-anchor="middle"
+                font-family="Kumbh Sans, Inter, Roboto, Arial, sans-serif"
+                font-weight="800"
+                font-size="40"
+                fill="#fff"
+                letter-spacing="2">NB</text>
+
+            <!-- stand -->
+            <rect x="62" y="89" width="8" height="12" rx="3" fill="#fff"/>
+            <rect x="48.5" y="95" width="36" height="8" rx="3" fill="#fff"/>
+        </svg>
+        
+        <button class="navbar__toggle" id="mobile-menu"
+            aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        
+        <ul class="navbar__menu" id="nav-menu">
+            <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+            <li class="navbar__item"><a href="#about" class="navbar__links">About</a></li>
+            <li class="navbar__item"><a href="#experience" class="navbar__links">Experience</a></li>
+            <li class="navbar__btn"><a href="#footer" class="button">Contact Info</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h4>Hi, my name is </h4>
+        <h1>Naz Buhn</h1>
+        <p>I thrive on unraveling the complexities of biology through the lens of data and algorithms. The challenge of transforming intricate biomedical problems into innovative, data-driven solutions excites me to keep learning and uncovering new ways to make an impact.</p>
+        <button class="main__btn"><a href="files/cv.pdf">Curriculum Vitae</a></button>
+      </div>
+      <div class="main__img--container">
+        <img src="images/rock.jpeg" alt="pic" id="main__img"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+   
+  <div class="services" id="about">
+    
+    <h1>About Me</h1>
+    <div class="services__container">
+      <figure class="about-figure">
+        <img src="images/chat.png" alt="pic" id="about__img"/>
+        <figcaption class="about-cap">Here’s a photo of what ChatGPT thinks my life looks like!</figcaption>
+      </figure>
+      <div class="services__content">
+        <p>I’ve always been fascinated by the intersection of biology and technology, especially how AI can be used to model and support biological systems.</p>
+        <p>This June, I graduated with honors from Cal Poly with a B.S. in Biological Sciences, concentrating in Cellular and Molecular Biology, and minors in Computer Science and Bioinformatics. Over the past four years, I’ve had the opportunity to delve into research that has fueled my curiosity in bioinformatics and the role AI can play in solving real biological problems.</p>
+        <p>Along the way, I’ve contributed to projects such as:</p>
+        <ul>
+          <li>Building a modular and reproducible RNA-seq analysis pipeline with real-time parameter tuning and interactive visualizations</li>
+          <li>Applying deep learning to denoise fluorescence microscopy images</li>
+          <li>Evaluating model predictions in a supervised anemia detection task to assess biological relevance and potential bias</li>
+          <li>Developing methods for entity resolution in a knowledge-graph-powered application for chrnoic lower back pain (CLBP)</li>
+          <li>Exploring connections between chemical spills and cancer rates using machine learning and public health data</li>
+          <li>Analyzing methods for classifying carbonic anhydrase proteins using clustering and MSTA</li>
+          <li>Investigating the use of real-world evidence (RWE) in FDA drug approvals</li>
+        </ul>
+        <p>Currently, I am applying to graduate programs, where I hope to continue tackling complex problems in bioinformatics using data and computation to better understand biology and improve health outcomes.</p>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const about  = document.querySelector('#about');
+  if (!navbar || !about) return;
+
+  const navHeight = navbar.offsetHeight;
+
+  window.addEventListener('scroll', () => {
+    const aboutTop = about.getBoundingClientRect().top;
+    const aboutBottom = about.getBoundingClientRect().bottom;
+
+    // Add color when top of About is at/above navbar,
+    // but remove when bottom of About is above navbar
+    if (aboutTop <= navHeight && aboutBottom > navHeight) {
+      navbar.classList.add('on-about');
+    } else {
+      navbar.classList.remove('on-about');
+    }
+  });
+});
+</script>
+    </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="experience" id="experience">
+    <h1>Experience</h1>
+
+    <!-- QuantumCyte -->
+    <div class="exp-grid">
+      <aside class="exp-left">
+        <figure class="exp-figure">
+          <img src="images/quantumcyte.png" alt="QuantumCyte logo" class="exp-img">
+        </figure>
+        <figure class="exp-figure">
+          <img src="images/bailey 2025.jpg" alt="Bailey College talk" class="exp-img">
+          <figcaption class="exp-cap">Bioinformatics Capstone Group at Bailey College Student Research Conference (May 2025)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content exp-right">
+        <h2>QuantumCyte, Inc.</h2>
+        <h3>Bioinformatics Consulting Internship, April – June 2025</h3>
+        <ul>
+          <li>Co-developed a modular, interactive RNA-seq analysis pipeline in R using Google Colab as part of the Bioinformatics Capstone course (DATA 441 &amp; 442)</li>
+          <li>Built core modules for data cleaning, differential expression (DESeq2), PCA, gene set enrichment (fgsea), and GO analysis with real-time parameter control</li>
+          <li>Created integrated visualizations for gene expression patterns, PCA results, and sample size estimates</li>
+          <li>Presented findings in an oral talk at the Bailey College Student Research Conference (May 2025): “Developing a Comparative Transcriptomics Pipeline to Identify Key Biomarkers for Pre-metastatic Tumor Buds.”</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- BIRG -->
+    <div class="BIRG-grid">
+      <aside class="BIRG-left">
+        <figure class="BIRG-figure">
+          <img src="images/2024bailey.png" alt="Bailey" class="BIRG-img">
+          <figcaption class="BIRG-cap">Bailey College Student Research Conference (May 2024)</figcaption>
+        </figure>
+        <figure class="BIRG-figure">
+          <img src="images/bailey 2024.jpg" alt="Bailey College talk" class="BIRG-img">
+          <figcaption class="BIRG-cap">BIRG Group at Bailey College Student Research Conference (May 2024)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content BIRG-right">
+        <h2>Cal Poly's Bioinformatics Research Group (BIRG)</h2>
+        <h3>Undergraduate Research Assistant, January 2024 – June 2025</h3>
+        <ul>
+          <li>Collaborated on the design and development of a zero-shot entity resolution methodology assessing the impact of context in NIH-funded chronic lower back pain (CLBP) knowledge graph research. Evaluated entity pairs to build a ground truth dataset and helped craft LLM prompts for entity resolution across varying context levels.</li>
+          <li>Assessed the performance of protein clustering and alignment algorithms for classifying carbonic anhydrase proteins. Applied SVD and K-means clustering, evaluating the impact of sequence length and clustering conditions using silhouette scores. Compared multiple sequence alignment (Clustal Omega) and multiple structure alignment (mTM-align, FoldMason) methods with phylogenetic tree analysis.</li>
+          <li>Presented poster titled “Novel Approaches to Literature Analysis and Entity Resolution for Chronic Lower Back Pain; Knowledge Graphs and Large Language Models” at Bailey College Student Research Conference (May 2024)</li>
+        </ul>
+
+        <h4>Publications</h4>
+        <ul>
+          <li>Lin, D., Koenig, C., Kaplan, S., Bittner, M., Paraiso, M., Buhn, N., et al. (2025). Investigating the Impact of Context on Zero-Shot Entity Resolution: Applications in Chronic Lower Back Pain. 2025 8th International Conference on Information and Computer Technologies (ICICT), IEEE. <a class="birg__btn" href="https://doi.org/10.1109/ICICT64582.2025.00067">Go to paper</a></li>
+          <li>Anderson, P., Lin, D., Davidson, J., Migler, T., Ho, I., Koenig, C., Bittner, M., Kaplan, S., Paraiso, M., Buhn, N., et al. (2024). Bridging Domains in Chronic Lower Back Pain: Large Language Models and Ontology-Driven Strategies for Knowledge Graph Construction. IWBBIO 2024. Lecture Notes in Computer Science, Springer. <a class="birg__btn" href="https://doi.org/10.1007/978-3-031-64636-2_2">Go to paper</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Ventura -->
+    <div class="ventura-grid">
+      <aside class="ventura-left">
+        <figure class="ventura-figure">
+          <img src="images/2025surp.png" alt="surp" class="ventura-img">
+          <figcaption class="ventura-cap">Summer Undergraduate Research Program Symposium (October 2024)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content ventura-right">
+        <h2>Deep Learning for Microscope Image Denoising</h2>
+        <h3>Undergraduate Research Assistant, June 2024 – Present</h3>
+        <ul>
+          <li>Trained, tested, and evaluated supervised deep learning models for fluorescence microscopy image denoising as part of NIH-funded research.</li>
+          <li>Developed a stitching algorithm to reconstruct full-resolution images from overlapping, denoised segments with varying light intensities.</li>
+          <li>Assessed denoising performance using PSNR and SSIM image quality metrics.</li>
+          <li>Presented poster titled “Deep Learning for Microscope Image Denoising” at Cal Poly's Summer Undergraduate Research Program Symposium.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Jazz -->
+    <div class="jazz-grid">
+      <aside class="jazz-left">
+        <figure class="jazz-figure">
+          <img src="images/jazz.png" alt="jazz" class="jazz-img">
+        </figure>
+      </aside>
+
+      <section class="services__content jazz-right">
+        <h2>Jazz Pharmaceuticals</h2>
+        <h3>Regulatory Strategy Intern, June 2023 – August 2023</h3>
+        <ul>
+          <li>Conducted a comprehensive review of uses of Real-World Evidence in FDA New Drug Applications, Biologics License Applications, and supplementals.</li>
+          <li>Evaluated post-approval Chemistry, Manufacturing, and Controls changes reporting categories to ensure compliance with health authority guidance.</li>
+          <li>Developed and implemented multiple SharePoint pages including an eCTD v4.0 update and regulatory publishing landing page for company website.</li>
+          <li>Poster titled "Real World Evidence in FDA Drug Approvals." displayed at The Organization for Professionals in Regulatory Affairs, TOPRA Annual Symposium, Lisbon, Portugal.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Pheast -->
+    <div class="pheast-grid">
+      <aside class="pheast-left">
+        <figure class="pheast-figure">
+          <img src="images/pheast.png" alt="pheast" class="pheast-img">
+        </figure>
+      </aside>
+
+      <section class="services__content pheast-right">
+        <h2>Pheast Therapeutics</h2>
+        <h3>Incoming Bioinformatics Consultant, August 2025</h3>
+      </section>
+    </div>
+  </div> <!-- end .experience -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container" id="footer">
+      <h1>Contact</h1>
+      <a class="footer-left" href="mailto:nazbuhn@gmail.com">nazbuhn@gmail.com</a>
+      <a class="footer-right btn btn--linkedin" href="https://www.linkedin.com/in/nasreenbuhn/">LinkedIn</a>
+    </div>
+  </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('mobile-menu');
+  const menu   = document.getElementById('nav-menu');
+
+  if (!toggle || !menu) {
+    console.warn('Nav elements not found');
+    return;
+  }
+
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('active');
+    toggle.classList.toggle('isactive', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('no-scroll', open);
+  });
+
+  document.querySelectorAll('.navbar__links, .button').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('active');
+      toggle.classList.remove('isactive');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+});
+</script>
+</body>
+</html>
