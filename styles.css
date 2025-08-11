@@ -1109,21 +1109,24 @@ html {
   }
 }
 .services__container{
-  align-items: center !important;      /* was flex-start */
+  align-items: center !important;   
 }
 .about-figure{
-  display: flex;                       /* ensure the image/caption center within the figure */
+  display: flex;                      
   flex-direction: column;
   justify-content: center;
 }
 #about__img{
-  margin-top: 0 !important;            /* cancel earlier 6rem */
+  margin-top: 0 !important;           
   display: block;
 }
 
-/* === ABOUT H1: keep size strong on phones/tablets === */
 .services h1{
   font-size: clamp(2.6rem, 4.2vw + 1.6rem, 3.5rem) !important;
   line-height: 1.1;
   text-wrap: balance;
+}
+@media (max-width: 960px){
+  .services__container{ align-items: center !important; }
+  .about-figure{ align-items: center; text-align: center; }
 }
