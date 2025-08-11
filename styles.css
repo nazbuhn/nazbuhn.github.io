@@ -1057,3 +1057,24 @@ html {
 
 /* Optional: no need to block page scroll now, but safe to keep */
 .no-scroll { overflow: hidden; }
+
+/* Center all experience photos on mobile (iPhones etc.) */
+@media (max-width: 900px) {
+  .exp-left,
+  .ventura-left,
+  .pheast-left,
+  .BIRG-left,
+  .jazz-left {
+    align-items: center !important; /* center flex children horizontally */
+  }
+
+  .exp-img,
+  .ventura-img,
+  .pheast-img,
+  .BIRG-img,
+  .jazz-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
