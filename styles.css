@@ -816,9 +816,14 @@ html {
   .experience figcaption{
     font-size:.8rem;
   }
-  .experience img{
-    min-width:auto;
-    justify-content:center !important;
+  .exp-img, 
+  .ventura-img,
+  .BIRG-img,
+  .pheast-img,
+  .jazz-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
