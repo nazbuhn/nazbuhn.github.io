@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <!-- Side Dock -->
   <nav class="side-dock" aria-label="Quick contacts">
     <a class="dock-item dock-linkedin" href="https://www.linkedin.com/in/nasreenbuhn/" target="_blank" rel="noopener" aria-label="Open LinkedIn">
@@ -32,8 +31,7 @@
             <title>NB logo</title>
 
             <!-- monitor -->
-            <rect x="8" y="8" width="110" height="80" rx="10"
-                fill="#B2CBE6" stroke="#fff" stroke-width="7"/>
+            <rect x="8" y="8" width="110" height="80" rx="10" fill="#B2CBE6" stroke="#fff" stroke-width="7"/>
 
             <!-- NB letters -->
             <text x="65" y="65"
@@ -65,7 +63,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Main -->
   <div class="main">
     <div class="main__container">
       <div class="main__content">
@@ -87,7 +85,7 @@
     <h1>About Me</h1>
     <div class="services__container">
       <figure class="about-figure">
-        <img src="images/chat.png" alt="pic" id="about__img"/>
+        <img class="about-img" src="images/chat.png" alt="pic" id="about__img"/>
         <figcaption class="about-cap">Here’s a photo of what ChatGPT thinks my life looks like!</figcaption>
       </figure>
       <div class="services__content">
@@ -104,29 +102,26 @@
           <li>Investigating the use of real-world evidence (RWE) in FDA drug approvals</li>
         </ul>
         <p>Currently, I am applying to graduate programs, where I hope to continue tackling complex problems in bioinformatics using data and computation to better understand biology and improve health outcomes.</p>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('.navbar');
-  const about  = document.querySelector('#about');
-  if (!navbar || !about) return;
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar');
+            const about  = document.querySelector('#about');
+            if (!navbar || !about) return;
 
-  const navHeight = navbar.offsetHeight;
+            const navHeight = navbar.offsetHeight;
 
-  window.addEventListener('scroll', () => {
-    const aboutTop = about.getBoundingClientRect().top;
-    const aboutBottom = about.getBoundingClientRect().bottom;
+            window.addEventListener('scroll', () => {
+              const aboutTop = about.getBoundingClientRect().top;
+              const aboutBottom = about.getBoundingClientRect().bottom;
 
-    // Add color when top of About is at/above navbar,
-    // but remove when bottom of About is above navbar
-    if (aboutTop <= navHeight && aboutBottom > navHeight) {
-      navbar.classList.add('on-about');
-    } else {
-      navbar.classList.remove('on-about');
-    }
-  });
-});
-</script>
-    </div>
+
+              if (aboutTop <= navHeight && aboutBottom > navHeight) {
+                navbar.classList.add('on-about');
+              } else {
+                navbar.classList.remove('on-about');
+              }});});
+        </script>
+      </div>
     </div>
   </div>
 
@@ -252,22 +247,22 @@ document.addEventListener('DOMContentLoaded', () => {
       <a class="footer-right btn btn--linkedin" href="https://www.linkedin.com/in/nasreenbuhn/">LinkedIn</a>
     </div>
   </footer>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('mobile-menu');
-  const menu   = document.getElementById('nav-menu');
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('mobile-menu');
+    const menu   = document.getElementById('nav-menu');
 
-  if (!toggle || !menu) {
-    console.warn('Nav elements not found');
-    return;
-  }
+    if (!toggle || !menu) {
+      console.warn('Nav elements not found');
+      return;
+    }
 
-  toggle.addEventListener('click', () => {
-    const open = menu.classList.toggle('active');
-    toggle.classList.toggle('isactive', open);
-    toggle.setAttribute('aria-expanded', open);
-    document.body.classList.toggle('no-scroll', open);
-  });
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('active');
+      toggle.classList.toggle('isactive', open);
+      toggle.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('no-scroll', open);
+    });
 
   document.querySelectorAll('.navbar__links, .button').forEach(a => {
     a.addEventListener('click', () => {
