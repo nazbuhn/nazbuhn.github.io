@@ -817,8 +817,8 @@ html {
     font-size:.8rem;
   }
   .experience img{
-    min-width:70%;
-    justify-content: center !important;
+    min-width:auto;
+    justify-content:center !important;
   }
 }
 
