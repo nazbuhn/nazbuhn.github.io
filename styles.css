@@ -818,7 +818,7 @@ html {
   }
   .experience img{
     min-width:70%;
-    justify-content: center;
+    justify-content: center !important;
   }
 }
 
