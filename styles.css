@@ -86,12 +86,12 @@ html {
 
 }
 .button:hover {
-    background: #4683C3;
+    background: #6F8575;
     color: #fff;
     transition: all 0.3s ease;
 }
 .navbar__links:hover {
-    color: #B2CBE6;
+    color: #667A6B;
     transition: all 0.3s ease;
 }
 .nb-logo {
@@ -459,7 +459,7 @@ html {
     align-items: center;
     height: auto;
     padding-top: 2rem; 
-    padding-bottom: 3rem; 
+    padding-bottom: 2rem; 
     padding-left:3rem;
     padding-right:3rem;
 
@@ -531,7 +531,7 @@ html {
 }
 .footer-left:hover,
 .footer-left:focus {
-  color:#67796E;
+  color:#424D46;
 }
 .btn {
   display: inline-flex;
