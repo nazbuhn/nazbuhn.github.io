@@ -504,7 +504,6 @@ html {
 }
 
 
-
 /* Footer */
 .footer {
     margin:0rem;
@@ -532,7 +531,7 @@ html {
 }
 .footer-left:hover,
 .footer-left:focus {
-  color:#546458;
+  color:#67796E;
 }
 .btn {
   display: inline-flex;
@@ -559,7 +558,6 @@ html {
 .btn--linkedin:active {
   transform: translateY(0);
 }
-
 
 
 /* 960 */
@@ -828,7 +826,7 @@ html {
   .projects {
     padding-left: 3rem;
     padding-right: 3rem;
-}
+}}
 
 
 @media (prefers-reduced-motion: reduce){
@@ -930,4 +928,4 @@ html {
     grid-area: right;
     justify-self: auto;
   }
-}}
+}
