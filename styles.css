@@ -1,931 +1,309 @@
-* {
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-    font-family: 'Kumbh Sans', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nasreen Buhn</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Side Dock -->
+  <nav class="side-dock" aria-label="Quick contacts">
+    <a class="dock-item dock-linkedin" href="https://www.linkedin.com/in/nasreenbuhn/" target="_blank" rel="noopener" aria-label="Open LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.06C12.54 8.9 13.9 8 16 8c3.2 0 5 2.1 5 6.1V24h-4v-8.1c0-1.9-.7-3.2-2.3-3.2-1.26 0-2 .85-2.33 1.67-.12.3-.15.72-.15 1.14V24h-4V8z"/></svg>
+      <span class="dock-label">LinkedIn</span>
+    </a>
+    <a class="dock-item dock-email" href="mailto:nazbuhn@gmail.com" aria-label="Send me an email">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+      <span class="dock-label">Email</span>
+    </a>
+    <a class="dock-item dock-resume" href="files/BuhnCV.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7V3.5L19.5 9H15ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>
+      <span class="dock-label">CV</span>
+    </a>
+  </nav>
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; 
-  -webkit-text-size-adjust: 100%;
-}
-.no-scroll { overflow: hidden; }
+  <!-- Top navigation -->
+  <nav class="navbar">
+    <div class="navbar__container">
+        <svg class="nb-logo" viewBox="0 0 140 100" xmlns="http://www.w3.org/2000/svg" role="img">
+            <title>NB logo</title>
 
-:root { 
-  --nav-h: 72px;
-  --dock-accent:#fff;  
-  --dock-bg:#839788;         
-  --dock-text:#fff;    
-} 
+            <!-- monitor -->
+            <rect x="8" y="8" width="110" height="80" rx="10" fill="#B2CBE6" stroke="#fff" stroke-width="7"/>
 
-/* navigation*/
-.navbar__container {
-  display: flex;
-  align-items:center; 
-  justify-content:space-between;
-  height: 80px; 
-  width:100%; 
-  max-width:1300px; 
-  padding: 0 16px; 
-  margin:0 auto;
-}
-.navbar__toggle {
-  display:none; 
-  background:none; 
-  border:0; 
-  padding:8px; 
-  cursor:pointer;
-}
-.navbar__toggle .bar{
-  width: 25px; 
-  height: 3px; 
-  margin:5px 0; 
-  background:#fff;
-  transition: transform .3s ease, opacity .3s ease;
-}
-.navbar__menu { 
-  display:flex; 
-  align-items:center; 
-  list-style:none; 
-  text-align: center;
-  gap:0; 
-}
-.navbar__item {
-    height: 80px;
-}
-.navbar__links {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-}
-.navbar__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
-}
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #B2CBE6;
-    color:#fff;
+            <!-- NB letters -->
+            <text x="65" y="65"
+                text-anchor="middle"
+                font-family="Kumbh Sans, Inter, Roboto, Arial, sans-serif"
+                font-weight="800"
+                font-size="40"
+                fill="#fff"
+                letter-spacing="2">NB</text>
 
-}
-.button:hover {
-    background: #6F8575;
-    color: #fff;
-    transition: all 0.3s ease;
-}
-.navbar__links:hover {
-    color: #667A6B;
-    transition: all 0.3s ease;
-}
-.nb-logo {
-  display: block;
-  height: 48px;   
-  width: auto;     
-}
-.navbar {
-  background: #BAA898;          
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  transition: background-color .25s ease, color .25s ease;
-}
-.navbar a { color: #fff; transition: color .25s ease; }
-.navbar.on-about { background-color: #CEC1B6; }    
+            <!-- stand -->
+            <rect x="62" y="89" width="8" height="12" rx="3" fill="#fff"/>
+            <rect x="48.5" y="95" width="36" height="8" rx="3" fill="#fff"/>
+        </svg>
+        
+        <button class="navbar__toggle" id="mobile-menu"
+            aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        
+        <ul class="navbar__menu" id="nav-menu">
+            <li class="navbar__item"><a href="/" class="navbar__links">Home</a></li>
+            <li class="navbar__item"><a href="#about" class="navbar__links">About</a></li>
+            <li class="navbar__item"><a href="#experience" class="navbar__links">Experience</a></li>
+            <li class="navbar__btn"><a href="#footer" class="button">Contact Info</a></li>
+        </ul>
+    </div>
+  </nav>
 
-#mobile-menu.isactive .bar:nth-child(2){ 
-  opacity:0; }
-#mobile-menu.isactive .bar:nth-child(1){ 
-  transform: translateY(8px) rotate(45deg); }
-#mobile-menu.isactive .bar:nth-child(3){ 
-  transform: translateY(-8px) rotate(-45deg); }
+  <!-- Main -->
+  <div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h4>Hi, my name is </h4>
+        <h1>Naz Buhn</h1>
+        <p> I have long been driven by a curiosity about how things work, and during my undergrad this curiosity evolved into a core question: how can artificial intelligence and data science provide new ways to understand and engage with the complexity of biology? This question has guided my academic path and research interests. Looking forward, I aim to develop tools that bridge these fields to tackle fundamental challenges in biology and medicine.</p>
+        <button class="main__btn"><a href="files/CV.pdf">Curriculum Vitae</a></button>
+      </div>
+      <div class="main__img--container">
+        <img src="images/rock.jpeg" alt="pic" id="main__img"/>
+      </div>
+    </div>
+  </div>
 
-/* side dock */
-.dock-linkedin:hover svg{ fill:#0A66C2; }     
-.dock-email:hover svg{ fill:var(--dock-accent); }
-.dock-resume:hover svg{ fill:var(--dock-accent); }
-.side-dock{
-  position:fixed;
-  align-items: flex-end;
-  top:50%;
-  right:0;               
-  transform:translateY(-50%);
-  display:flex;
-  flex-direction:column;
-  gap:.5rem;
-}
-.dock-item{
-  --width-collapsed: 44px;
-  --width-expanded: 180px;
-  width:var(--width-collapsed);
-  height:44px;
-  border-radius:999px 0 0 999px;
-  background:var(--dock-bg);
-  color:var(--dock-text);
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-  overflow:hidden;
-  box-shadow:0 6px 20px rgba(0,0,0,.15);
-  align-self: flex-end; 
-  transition: width .25s ease, box-shadow .25s ease, background .25s ease;
-  outline: none;
-}
-.dock-item svg{
-  width:22px; height:22px; flex:0 0 22px;
-  margin:0 12px;
-  fill:var(--dock-accent);
-}
-.dock-label{
-  white-space:nowrap;
-  font:500 14px/1.2 "Kumbh Sans","Roboto",system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  opacity:.95;
-}
-.dock-item:hover,
-.dock-item:focus-visible{
-  width:var(--width-expanded);
-  box-shadow:0 10px 28px rgba(0,0,0,.22);
-  background: #839788;
-}
+  <!-- About -->
+   
+  <div class="services" id="about">
+    
+    <h1>About Me</h1>
+    <div class="services__container">
+      <figure class="about-figure">
+        <img class="about-img" src="images/chat.png" alt="pic" id="about__img"/>
+        <figcaption class="about-cap">Here’s a photo of what ChatGPT thinks my life looks like!</figcaption>
+      </figure>
+      <div class="services__content">
+        <p>I’ve always been fascinated by the intersection of biology and technology, especially how AI can be used to model and support biological systems.</p>
+        <p>This June, I graduated with honors from Cal Poly with a B.S. in Biological Sciences, concentrating in Cellular and Molecular Biology, and minors in Computer Science and Bioinformatics. Over the past four years, I’ve had the opportunity to delve into research that has fueled my curiosity in bioinformatics and the role AI can play in solving real biological problems.</p>
+        <p>Along the way, I’ve contributed to projects such as:</p>
+        <ul>
+          <li>Building a modular and reproducible RNA-seq analysis pipeline with real-time parameter tuning and interactive visualizations</li>
+          <li>Applying deep learning to denoise fluorescence microscopy images</li>
+          <li>Evaluating model predictions in a supervised anemia detection task to assess biological relevance and potential bias</li>
+          <li>Developing methods for entity resolution in a knowledge-graph-powered application for chrnoic lower back pain (CLBP)</li>
+          <li>Exploring connections between chemical spills and cancer rates using machine learning and public health data</li>
+          <li>Analyzing methods for classifying carbonic anhydrase proteins using clustering and MSTA</li>
+          <li>Investigating the use of real-world evidence (RWE) in FDA drug approvals</li>
+        </ul>
+        <p>Currently, I am applying to graduate programs, where I hope to continue tackling complex problems in bioinformatics using data and computation to better understand biology and improve health outcomes.</p>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar');
+            const about  = document.querySelector('#about');
+            if (!navbar || !about) return;
 
-.fa-gem{
-    margin-right: 0.5rem;
-}
+            const navHeight = navbar.offsetHeight;
 
-/* main */
-.main__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-self: center;
-    margin: 0 auto;
-    background-color: #fff;
-    z-index:1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0 50px;
-    min-height: 90vh;     
-    height: auto;         
-    gap: 2rem;            
-    padding-block: 2rem;  
-}
-.main__content h1 {
-    font-size: 4rem;
-    background-color:#839788;
-    background-image:#839788;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
-.main__content h4 {
-    font-size: 1.2rem;
-    background-color:#BAA898;
-    background-image:#BAA898;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-}
-.main__content p {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight:700;
-    color: #BAA898;
-}
-.main__btn {
-    font-size: 1rem;
-    background-color: #B2CBE6;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
-}
-.main__btn a {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    text-decoration: none;
-}
-.main__btn:hover {
-    background: #4683C3;
-    color:#fff;
-}
-.main__btn:hover:after {
-    width: 100%;
-}
-.main__img-container {
-    align-items: center;
-}
-#main__img{
-    height:auto;
-    width: 65%;
-    width: min(65%, 560px);
-    height: auto;
-    display: block;
-    margin: 0 auto;  
-}
-
-/* About */
-#about__img {
-    margin-top:6rem;
-    width: 320px;
-    max-width: 35vw;
-    height: auto;
-    flex-shrink: 0;
-    border-radius: 8px;
-}
-.about-cap {
-  margin-top: .5rem;
-  font-size: .85rem;
-  line-height: 1.4;
-  color: #141414;        
-  text-align: center;   
-  font-style: normal;
-  opacity: .9;
-}
-.services {
-    background-color: #BAA898;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding-top: 2rem; 
-
-}
-.services h1 {
-    background-color: #EEE0CB;
-    background-image: #EEE0CB;
-    background-size: 100%;
-    margin-bottom: 2rem;
-    font-size: 3.5rem;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    text-align: center;
-}
-.services__container {
-    display: flex;
-    flex-direction: row; /* image left, text right */
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 20px; 
-    max-width: 1200px;
-    padding: 0 16px;
-    box-sizing: border-box;
-}
-.services p {
-    max-width: 800px;
-    margin: 0 0 1.2rem;
-    font-size: 1rem;
-    line-height: 1.3;
-    color: #fff;
-}
-.services ul {
-    margin: 0 0 1.2rem 0;
-    padding-left: 1.2rem;
-    color: #fff;
-}
-.services li {
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-    color: #fff;
-}
-/* Experience */
-.experience {
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.experience h1 {
-  color: #839788;
-  font-size: 3.5rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-.exp-grid {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 3rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-}
-.ventura-grid, .pheast-grid {
-  border-top: 1px solid #e5e7eb;
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 3rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-}
-.pheast-grid {
-  border-bottom: 1px solid #e5e7eb;
-}
-.ventura-grid, .BIRG-grid, .jazz-grid {
-  padding-top: 2rem;
-}
-.ventura-grid, .BIRG-grid, .jazz-grid, exp-grid{
-  padding-bottom: 2rem;
-}
-.BIRG-grid, .jazz-grid {
-  border-top: 1px solid #e5e7eb;
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 3rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1100px;
-}
-.BIRG-right, .jazz-right { order: 1; } 
-.BIRG-left, .jazz-left { order: 2; } 
-.exp-img,
-.BIRG-img, .ventura-img, .pheast-img, .jazz-img {
-  display: block;
-  width: 100%;
-  height: auto;      
-  object-fit: contain;
-}
-.BIRG-cap{ 
-  margin-bottom: 3rem;
-}
-.exp-cap{
-  padding-bottom:2rem;
-}
-.exp-cap,
-.BIRG-cap, .ventura-cap {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  margin-top: 0.4rem;
-  opacity: 0.8;
-}
-.exp-right h2, .ventura-right h2, .jazz-right h2, .pheast-right h2, .BIRG-right h2 {
-  margin: 0 0 0.25rem;
-  padding:0 0 0.25rem;
-}
-.exp-right h3, .BIRG-right h3, .ventura-right h3, .jazz-right h3, .pheast-right h3 {
-  margin: 0 0 0.75rem;
-  font-weight: 500;
-}
-.exp-right ul,
-.BIRG-right ul, .ventura-right ul, .jazz-right ul {
-  margin: 1.25rem 0 0;
-  padding-left: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  list-style: disc;
-}
-.exp-right li,
-.BIRG-right li, .ventura-right li, .jazz-right li {
-  margin-bottom: 0.7rem;
-  line-height: 1.4;
-}
-.birg__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;      
-    color: #fff;              
-    padding: 10px 20px;
-    margin: 1.2rem auto;         
-    height: auto;               
-    width: fit-content;        
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #B2CBE6;
-    cursor: pointer;
-}
-.birg__btn,
-.birg__btn a,
-.birg__btn a:link,
-.birg__btn a:visited,
-.birg__btn a:active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    margin: 1.2rem auto;
-    border: none;
-    outline: none;
-    border-radius: 1px;
-    background: #B2CBE6;
-    color: #fff !important;      
-    text-decoration: none !important;
-    font-weight: 500;
-    cursor: pointer;
-}
-.birg__btn a:hover,
-.birg__btn:hover {
-    background: #4683C3;
-    color: #fff;
-    transition: all 0.3s ease;
-}
-/*Projects */
-.projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding-top: 2rem; 
-    padding-bottom: 2rem; 
-    padding-left:3rem;
-    padding-right:3rem;
-
-}
-.projects h1 {
-    background-color: #839788;
-    background-image: #000;
-    background-size: 100%;
-    margin-bottom: 2rem;
-    font-size: 3.5rem;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    text-align: center;
-}
-.projects h2 {
-    background-color: #000;
-    background-image: #000;
-    background-size: 100%;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    text-align: center;
-}
-.projects h3 {
-    margin-bottom: .5rem;
-}
-.projects p {
-    color:#000;
-}
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* VIDA left, Predicting right */
-  gap: 3rem;
-  align-items: top;
-  width: 100%;
-  max-width: 1100px;
-}
+            window.addEventListener('scroll', () => {
+              const aboutTop = about.getBoundingClientRect().top;
+              const aboutBottom = about.getBoundingClientRect().bottom;
 
 
-/* Footer */
-.footer {
-    margin:0rem;
-    background: #DEE3E0
-}
-.footer__container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem 1rem;
-  align-items: center;
-  font-family: "Kumbh Sans", "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-  color: #839788;
-}
-.footer__container h1 {
-  margin: 0 0 0.75rem 0;
-  font-size: 2rem;
-}
-.footer-left {
-  text-decoration: none;
-  color: inherit;
-  opacity: 1;
-}
-.footer-left:hover,
-.footer-left:focus {
-  color:#424D46;
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
-}
-.btn:focus {
-  outline: none;
-}
-.btn--linkedin {
-  background: #0a66c2; 
-  color: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 10px rgba(10, 102, 194, 0.15);
-}
-.btn--linkedin:hover {
-  transform: translateY(-2px);
-}
-.btn--linkedin:active {
-  transform: translateY(0);
-}
+              if (aboutTop <= navHeight && aboutBottom > navHeight) {
+                navbar.classList.add('on-about');
+              } else {
+                navbar.classList.remove('on-about');
+              }});});
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div class="experience" id="experience">
+    <h1>Experience</h1>
+
+    <!-- QuantumCyte -->
+    <div class="exp-grid">
+      <aside class="exp-left">
+        <figure class="exp-figure">
+          <img src="images/quantumcyte.png" alt="QuantumCyte logo" class="exp-img">
+        </figure>
+        <figure class="exp-figure">
+          <img src="images/bailey 2025.jpg" alt="Bailey College talk" class="exp-img">
+          <figcaption class="exp-cap">Bioinformatics Capstone Group at Bailey College Student Research Conference (May 2025)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content exp-right">
+        <h2>QuantumCyte, Inc.</h2>
+        <h3>Bioinformatics Consulting Internship, April – June 2025</h3>
+        <ul>
+          <li>Co-developed a modular, interactive RNA-seq analysis pipeline in R using Google Colab as part of the Bioinformatics Capstone course (DATA 441 &amp; 442)</li>
+          <li>Built core modules for data cleaning, differential expression (DESeq2), PCA, gene set enrichment (fgsea), and GO analysis with real-time parameter control</li>
+          <li>Created integrated visualizations for gene expression patterns, PCA results, and sample size estimates</li>
+          <li>Presented findings in an oral talk at the Bailey College Student Research Conference (May 2025): “Developing a Comparative Transcriptomics Pipeline to Identify Key Biomarkers for Pre-metastatic Tumor Buds.”</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- BIRG -->
+    <div class="BIRG-grid">
+      <aside class="BIRG-left">
+        <figure class="BIRG-figure">
+          <img src="images/2024bailey.png" alt="Bailey" class="BIRG-img">
+          <figcaption class="BIRG-cap">Bailey College Student Research Conference (May 2024)</figcaption>
+        </figure>
+        <figure class="BIRG-figure">
+          <img src="images/bailey 2024.jpg" alt="Bailey College talk" class="BIRG-img">
+          <figcaption class="BIRG-cap">BIRG Group at Bailey College Student Research Conference (May 2024)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content BIRG-right">
+        <h2>Cal Poly's Bioinformatics Research Group (BIRG)</h2>
+        <h3>Undergraduate Research Assistant, January 2024 – June 2025</h3>
+        <ul>
+          <li>Collaborated on the design and development of a zero-shot entity resolution methodology assessing the impact of context in NIH-funded chronic lower back pain (CLBP) knowledge graph research. Evaluated entity pairs to build a ground truth dataset and helped craft LLM prompts for entity resolution across varying context levels.</li>
+          <li>Assessed the performance of protein clustering and alignment algorithms for classifying carbonic anhydrase proteins. Applied SVD and K-means clustering, evaluating the impact of sequence length and clustering conditions using silhouette scores. Compared multiple sequence alignment (Clustal Omega) and multiple structure alignment (mTM-align, FoldMason) methods with phylogenetic tree analysis.</li>
+          <li>Presented poster titled “Novel Approaches to Literature Analysis and Entity Resolution for Chronic Lower Back Pain; Knowledge Graphs and Large Language Models” at Bailey College Student Research Conference (May 2024)</li>
+        </ul>
+
+        <h4>Publications</h4>
+        <ul>
+          <li>Lin, D., Koenig, C., Kaplan, S., Bittner, M., Paraiso, M., Buhn, N., et al. (2025). Investigating the Impact of Context on Zero-Shot Entity Resolution: Applications in Chronic Lower Back Pain. 2025 8th International Conference on Information and Computer Technologies (ICICT), IEEE. <a class="birg__btn" href="https://doi.org/10.1109/ICICT64582.2025.00067">Go to paper</a></li>
+          <li>Anderson, P., Lin, D., Davidson, J., Migler, T., Ho, I., Koenig, C., Bittner, M., Kaplan, S., Paraiso, M., Buhn, N., et al. (2024). Bridging Domains in Chronic Lower Back Pain: Large Language Models and Ontology-Driven Strategies for Knowledge Graph Construction. IWBBIO 2024. Lecture Notes in Computer Science, Springer. <a class="birg__btn" href="https://doi.org/10.1007/978-3-031-64636-2_2">Go to paper</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Ventura -->
+    <div class="ventura-grid">
+      <aside class="ventura-left">
+        <figure class="ventura-figure">
+          <img src="images/2025surp.png" alt="surp" class="ventura-img">
+          <figcaption class="ventura-cap">Summer Undergraduate Research Program Symposium (October 2024)</figcaption>
+        </figure>
+      </aside>
+
+      <section class="services__content ventura-right">
+        <h2>Deep Learning for Microscope Image Denoising</h2>
+        <h3>Undergraduate Research Assistant, June 2024 – Present</h3>
+        <ul>
+          <li>Trained, tested, and evaluated supervised deep learning models for fluorescence microscopy image denoising as part of NIH-funded research.</li>
+          <li>Developed a stitching algorithm to reconstruct full-resolution images from overlapping, denoised segments with varying light intensities.</li>
+          <li>Assessed denoising performance using PSNR and SSIM image quality metrics.</li>
+          <li>Presented poster titled “Deep Learning for Microscope Image Denoising” at Cal Poly's Summer Undergraduate Research Program Symposium.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Jazz -->
+    <div class="jazz-grid">
+      <aside class="jazz-left">
+        <figure class="jazz-figure">
+          <img src="images/jazz.png" alt="jazz" class="jazz-img">
+        </figure>
+      </aside>
+
+      <section class="services__content jazz-right">
+        <h2>Jazz Pharmaceuticals</h2>
+        <h3>Regulatory Strategy Intern, June 2023 – August 2023</h3>
+        <ul>
+          <li>Conducted a comprehensive review of uses of Real-World Evidence in FDA New Drug Applications, Biologics License Applications, and supplementals.</li>
+          <li>Evaluated post-approval Chemistry, Manufacturing, and Controls changes reporting categories to ensure compliance with health authority guidance.</li>
+          <li>Developed and implemented multiple SharePoint pages including an eCTD v4.0 update and regulatory publishing landing page for company website.</li>
+          <li>Poster titled "Real World Evidence in FDA Drug Approvals." displayed at The Organization for Professionals in Regulatory Affairs, TOPRA Annual Symposium, Lisbon, Portugal.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Pheast -->
+    <div class="pheast-grid">
+      <aside class="pheast-left">
+        <figure class="pheast-figure">
+          <img src="images/pheast.png" alt="pheast" class="pheast-img">
+        </figure>
+      </aside>
+
+      <section class="services__content pheast-right">
+        <h2>Pheast Therapeutics</h2>
+        <h3>Bioinformatics Consultant, August 2025 - Present</h3>
+         <ul>
+          <li>Applied clustering and longitudinal time-series modeling to macrophage–cancer co-culture datasets.</li>
+          <li>Analyzed donor and dose-specific variability in treatment response curves</li>
+
+         </ul>
+      </section>
+    </div>
+
+  </div> <!-- end .experience -->
 
 
-/* 960 */
-@media (max-width: 960px){
+<!--Projects-->
 
-  /* navigation */
-  .navbar__toggle{ display:block; }
-  .navbar__item{ 
-    width:100%;
-    height: auto; 
-  }
+ <div class="projects" id="projects">
+  <h1>Projects</h1>
 
-  .navbar, .navbar__container { 
-    height: var(--nav-h) !important; 
-  }
-  .navbar__container { 
-    position: relative;
-    display:flex;
-    justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
-  } 
-  .navbar__menu{
-    width:100%; 
-    height:auto; 
-    max-height:70vh; 
-    overflow:auto;
-    background:#BAA898; 
-    z-index:999;
-    box-shadow: 0 6px 20px rgba(0,0,0,.15);
-    position: absolute;
-    top: 100%;                
-    left: 0; right: 0;
-    display: grid;
-    grid-template-columns:auto;
-    padding: 4px 0;                     
-    margin: 0;
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-  }
-    .navbar__menu.active{
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-    transition: all 0.5s ease;
-    height: 50vh;
-    font-size: 1.2rem;
-  }
-  .navbar__links,
-  .navbar__btn .button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 14px;     
-    min-height: 44px;                    
-    width: 100%;
-    margin:  6px;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1.2;
-  }
-  .navbar__btn .button{
-    background: #B2CBE6; 
-    color: #fff;
-    border: 0 ;
-    border-radius: 6px;
-    box-shadow: none ;
-  }
-  .button{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 50px;
-    margin: 0;
-  }
-  .button:hover{
-    background: #546458;
-    color:#fff;
-  }
-  .navbar__toggle .bar {
-    display: block;
-    cursor: pointer;
-    width: 25px;
-    height: 3px;
-    margin:5px auto;
-    transition: all 0.3s ease-in-out;
-    background: #fff;
-  }
-  #mobile-menu {
-    position:absolute;
-    top: 20%;
-    right: 5%;
-    transform: translate(5%, 20%);
-  }
-  #mobile-menu.isactive .bar:nth-child(2) {
-    opacity: 0;     
-  }
-  #mobile-menu.isactive .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);    
-  }
+  <div class="project-grid">
+    <!-- Left column -->
+    <article class="project-card vida">
+      <h2>VIDA: Visual Intelligence for Detecting Anemias</h2>
+      <h3>California Polytechnic State University · Deep Learning (CSC 487)</h3>
+      <p>Co-developed an ensemble model approach for anemia detection from peripheral blood smear images and CBC data. Fine-tuned VGG-16 architecture on images, achieving an F1-score of 80.18%, which increased to 85.02% with the addition of CBC data in the ensemble model. Assessed model performance using Grad-CAM, identifying prediction drivers and visual cues that influenced model decisions.</p>
+      </article>
 
-  #mobile-menu.isactive .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-  .nb-logo { 
-    height: 45px;
-    padding-left: 15px;
-  }
-  .side-dock{ z-index: 98; }
-
-  /* Main */
-  .main__container{
-    grid-template-columns: 1fr;
-    height: auto ;        
-    padding: 0 20px;
-    min-height: auto;  
-  }
-  #main__img{
-    width: 50% ;
-    height: auto ;
-    max-width: 520px;
-    margin: 1rem auto 0;            
-  }
-  .main{ 
-    padding-top: 2rem;
-    padding-bottom: 2.5rem } 
-
-  /* About */
-  .services__container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .services h1 {
-    font-size: 3rem;
-  }
-  #about__img {
-    margin-top:2rem;
-    max-width: 100%;
-  }
-
-  /* Experience */
-  .experience h1{
-    margin-top:0rem;
-    margin-bottom: 1rem;
-  }
-  .exp-cap, .BIRG-cap, .ventura-cap, .jazz-cap, .pheast-cap {
-    text-align: center !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem; 
-    padding-bottom: 3rem; 
-
-}
-
-}
-
-/* 768 */
-@media (max-width:768px){
-
-  /* side dock */
-  .side-dock{ 
-    top:auto; 
-    bottom:1rem; 
-    transform:none; 
-  }
-  .dock-item{ 
-    height:40px;
-    --width-expanded: 150px; 
-  }
-  /* Main */
-  .main__container {
-    display:grid;
-    grid-template-columns: auto;
-    align-items: center;
-    justify-self: center;
-    margin: 0 auto;
-    width: 100%;
-    height:auto; 
-  }
-  .main__content {
-    text-align: center;
-  }
-
-  #main__img{ 
-    width:60%; 
-    height:auto;
-    max-width:520px;
-    margin:0rem auto 0; 
-  }
-
-  .main__content h1 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-  }
-  .main__content h2 {
-    font-size: 3rem;
-  }
-  .main__content p {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  }
-    /* About */
-  .services h1,   .experience h1{
-    font-size: 2.4rem;
-  }
-
-  /* Experience */
-  .experience { 
-    padding: 2rem 1.25rem 3rem; 
-  }
-  .exp-grid,
-  .ventura-grid,   
-  .BIRG-grid,
-  .jazz-grid{
-    grid-template-columns: 1fr;
-    margin-top: 1rem;
-    align-items: center; 
-    justify-items: center; 
-  }
-  .pheast-grid {
-    grid-template-columns: 1fr;
-    margin-top: 1rem;
-    align-items: center;
-    gap:0;
-    padding-top:2rem;
-  }
-  .exp-right, .ventura-right, .pheast-right, .BIRG-right, .jazz-right { order: 1; }
-  .exp-left,  .ventura-left,  .pheast-left,  .BIRG-left,  .jazz-left  { 
-    order: 2;
-    align-items: center;
-    width: 100%; 
-  }
-  .pheast-img, .jazz-img{
-    width: 40%;
-    justify-self:center;
-   }
-  .exp-img, .ventura-img, .BIRG-img{
-    width: 60%;
-    height: auto ;
-    object-fit: contain;
-    justify-self:center;
-  }
-  .BIRG-cap{
-    margin-bottom:1rem;
-  }
-  .jazz-grid{
-    gap:2rem;
-  }
-  .project-grid {
-    grid-template-columns: 1fr;   /* single column */
-    gap: 1.5rem;
-  }
-  .projects {
-    padding-left: 3rem;
-    padding-right: 3rem;
-}}
+    <!-- Right column -->
+    <article class="project-card predicting">
+      <h2>Predicting Cancer Incidence Rates from Toxic Chemical Spills</h2>
+      <h3>California Polytechnic State University · Introduction to Data Science (DATA 301)</h3>
+      <p>
+        Built a machine learning pipeline to predict county-level cancer incidence rates from chemical spills reported in the EPA’s Toxic Release Inventory. Used PubChem’s PUG REST to extract carcinogen classifications for each release. Conducted extensive data cleaning and feature engineering, including encoding, scaling, and transformations. Trained multiple regression models (Random Forest, KNN, SVR) to evaluate predictive relationships.</p>
+    </article>
+  </div>
+</div>
 
 
-@media (prefers-reduced-motion: reduce){
-  .dock-item{ transition:none; }
-}
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container" id="footer">
+      <h1>Contact</h1>
+      <a class="footer-left" href="mailto:nazbuhn@gmail.com">nazbuhn@gmail.com</a>
+      <a class="footer-right btn btn--linkedin" href="https://www.linkedin.com/in/nasreenbuhn/">LinkedIn</a>
+    </div>
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('mobile-menu');
+    const menu   = document.getElementById('nav-menu');
 
-/* mobile */
-@media screen and (max-width:600px){
-  /* main */
-  .main__content h1 {
-    font-size: 2rem;
-    margin-top:1rem;
-  }
-  .main__content h2 {
-    font-size: 1rem;
-  }
-  .main__content p {
-    margin-top: 2rem;
-    font-size: 1rem;
-  }
+    if (!toggle || !menu) {
+      console.warn('Nav elements not found');
+      return;
+    }
 
-  .main__btn {
-    padding: 12px 36px;
-    margin:2.5rem 0
-  }
-  #main__img{
-    width:80%
-  }
-  .main__container{
-    gap:0rem;
-  }
- 
-  /* about */
-  .services h1, .experience h1 {
-    font-size: 2rem;
-   }
-  .services__container{
-    padding: 0px 25px;
-  }
-  .services p,.services li{
-    font-size:.9rem;
-  }
-  .about-cap{
-    font-size:.75rem;
-  }
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('active');
+      toggle.classList.toggle('isactive', open);
+      toggle.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('no-scroll', open);
+    });
 
-  /* experience */
-  .exp-right ul, .BIRG-right ul { padding-left: 1.25rem; }
-  .experience {
-     padding: 1.5rem 1.5rem 0rem 1.5rem !important;
-  }
-  .experience h2{
-    font-size:1.2rem;
-  }
-  .experience h3{
-    font-size:1rem;
-  }
-  .experience li{
-    font-size:.9rem;
-  }
-  .experience figcaption{
-    font-size:.8rem;
-  }
-  .exp-img, 
-  .ventura-img,
-  .BIRG-img,
-  .pheast-img,
-  .jazz-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-
-@media (max-width: 1200px) {
-  .experience { padding: 2rem 4rem 0rem 4rem; }
-}
-
-/* Footer */
-@media (min-width: 400px) {
-  .footer__container {
-    grid-template-columns: auto auto; 
-    justify-content: center; 
-    grid-template-areas:
-      "title title"
-      "left right";
-    gap: 1.2rem;
-  }
-  .footer__container h1 {
-    grid-area: title;
-    text-align: center;
-  }
-  .footer-left {
-    grid-area: left;
-    justify-self: auto;
-  }
-  .footer-right {
-    grid-area: right;
-    justify-self: auto;
-  }
-}
+  document.querySelectorAll('.navbar__links, .button').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.remove('active');
+      toggle.classList.remove('isactive');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+});
+</script>
+</body>
+</html>
