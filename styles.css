@@ -86,12 +86,12 @@ html {
 
 }
 .button:hover {
-    background: #6F8575;
+    background: #4683C3;
     color: #fff;
     transition: all 0.3s ease;
 }
 .navbar__links:hover {
-    color: #667A6B;
+    color: #4683C3;
     transition: all 0.3s ease;
 }
 .nb-logo {
