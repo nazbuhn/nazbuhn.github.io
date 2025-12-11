@@ -350,16 +350,19 @@ html {
   width: 100%;
   max-width: 1100px;
 }
-.pheast-grid {
+.Penn-grid {
   border-bottom: 1px solid #e5e7eb;
 }
-.ventura-grid, .BIRG-grid, .jazz-grid {
+.ventura-grid, .BIRG-grid, .jazz-grid, .Penn-grid {
   padding-top: 2rem;
 }
-.ventura-grid, .BIRG-grid, .jazz-grid, .exp-grid{
+.ventura-grid, .BIRG-grid, .jazz-grid, .exp-grid, .pheast-grid, .Penn-grid{
   padding-bottom: 2rem;
 }
-.BIRG-grid, .jazz-grid {
+.pheast-grid {
+  padding-top: 2rem;
+}
+.BIRG-grid, .jazz-grid, .Penn-grid{
   border-top: 1px solid #e5e7eb;
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -368,10 +371,10 @@ html {
   width: 100%;
   max-width: 1100px;
 }
-.BIRG-right, .jazz-right { order: 1; } 
-.BIRG-left, .jazz-left { order: 2; } 
+.BIRG-right, .jazz-right, .Penn-right { order: 1; } 
+.BIRG-left, .jazz-left, .Penn-left { order: 2; } 
 .exp-img,
-.BIRG-img, .ventura-img, .pheast-img, .jazz-img {
+.BIRG-img, .ventura-img, .pheast-img, .jazz-img, .Penn-img {
   display: block;
   width: 100%;
   height: auto;      
@@ -390,16 +393,16 @@ html {
   margin-top: 0.4rem;
   opacity: 0.8;
 }
-.exp-right h2, .ventura-right h2, .jazz-right h2, .pheast-right h2, .BIRG-right h2 {
+.exp-right h2, .ventura-right h2, .jazz-right h2, .penn-right h2, .pheast-right h2, .BIRG-right h2, .Penn-right h2 {
   margin: 0 0 0.25rem;
   padding:0 0 0.25rem;
 }
-.exp-right h3, .BIRG-right h3, .ventura-right h3, .jazz-right h3, .pheast-right h3 {
+.exp-right h3, .BIRG-right h3, .ventura-right h3, .jazz-right h3, .pheast-right h3, .Penn-right h3 {
   margin: 0 0 0.75rem;
   font-weight: 500;
 }
 .exp-right ul,
-.BIRG-right ul, .ventura-right ul, .jazz-right ul {
+.BIRG-right ul, .ventura-right ul, .jazz-right ul, .pheast-right ul, .Penn-right ul {
   margin: 1.25rem 0 0;
   padding-left: 1.5rem;
   font-size: 1rem;
@@ -407,7 +410,7 @@ html {
   list-style: disc;
 }
 .exp-right li,
-.BIRG-right li, .ventura-right li, .jazz-right li {
+.BIRG-right li, .ventura-right li, .jazz-right li, .pheast-right li, .Penn-right li {
   margin-bottom: 0.7rem;
   line-height: 1.4;
 }
@@ -783,7 +786,7 @@ html {
   .exp-grid,
   .ventura-grid,   
   .BIRG-grid,
-  .jazz-grid{
+  .jazz-grid, .Penn-grid{
     grid-template-columns: 1fr;
     margin-top: 1rem;
     align-items: center; 
@@ -796,8 +799,8 @@ html {
     gap:0;
     padding-top:2rem;
   }
-  .exp-right, .ventura-right, .pheast-right, .BIRG-right, .jazz-right { order: 1; }
-  .exp-left,  .ventura-left,  .pheast-left,  .BIRG-left,  .jazz-left  { 
+  .exp-right, .ventura-right, .pheast-right, .BIRG-right, .jazz-right, .Penn-right { order: 1; }
+  .exp-left,  .ventura-left,  .pheast-left,  .BIRG-left,  .jazz-left, .Penn-right  { 
     order: 2;
     align-items: center;
     width: 100%; 
@@ -806,7 +809,7 @@ html {
     width: 40%;
     justify-self:center;
    }
-  .exp-img, .ventura-img, .BIRG-img{
+  .exp-img, .ventura-img, .BIRG-img, .Penn-img{
     width: 60%;
     height: auto ;
     object-fit: contain;
@@ -873,7 +876,7 @@ html {
   }
 
   /* experience */
-  .exp-right ul, .BIRG-right ul { padding-left: 1.25rem; }
+  .exp-right ul, .BIRG-right ul, .Penn-right ul { padding-left: 1.25rem; }
   .experience {
      padding: 1.5rem 1.5rem 0rem 1.5rem !important;
   }
@@ -893,7 +896,8 @@ html {
   .ventura-img,
   .BIRG-img,
   .pheast-img,
-  .jazz-img {
+  .jazz-img, 
+  .Penn-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
